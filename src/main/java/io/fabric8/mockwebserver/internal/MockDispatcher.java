@@ -19,6 +19,7 @@ package io.fabric8.mockwebserver.internal;
 
 import okhttp3.mockwebserver.Dispatcher;
 import okhttp3.mockwebserver.MockResponse;
+import okhttp3.mockwebserver.QueueDispatcher;
 import okhttp3.mockwebserver.RecordedRequest;
 import io.fabric8.mockwebserver.ServerRequest;
 import io.fabric8.mockwebserver.ServerResponse;
@@ -27,7 +28,7 @@ import io.fabric8.mockwebserver.dsl.HttpMethod;
 import java.util.Map;
 import java.util.Queue;
 
-public class MockDispatcher extends Dispatcher {
+public class MockDispatcher extends QueueDispatcher {
 
     private final Map<ServerRequest, Queue<ServerResponse>> responses;
 
